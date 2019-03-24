@@ -1,4 +1,6 @@
 class Api::LocationsController < ApplicationController
+  before_action :authenticate_user
+  
   def index
     @locations = Location.all
     render 'index.json.jbuilder'
